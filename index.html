@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sierra "Sisi" Cameron | Cyber Defender Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Portfolio of Sierra 'Sisi' Cameron, entry-level Cybersecurity Specialist and SOC Analyst." />
+
+  <style>
+    :root {
+      --bg: #050814;
+      --bg-alt: #0c1020;
+      --card: #111828;
+      --accent: #38bdf8;
+      --accent-soft: rgba(56, 189, 248, 0.12);
+      --text-main: #f9fafb;
+      --text-muted: #9ca3af;
+      --border-subtle: #1f2937;
+      --font-main: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background: radial-gradient(circle at top, #0b1220 0, #020617 50%, #000 100%);
+      color: var(--text-main);
+      line-height: 1.6;
+      scroll-behavior: smooth;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(20px);
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.3), transparent);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .nav-logo {
+      width: 28px;
+      height: 28px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle at 30% 0, #38bdf8 0, #0f172a 40%, #020617 100%);
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.03em;
+    }
+
+    .nav-title {
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.2rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+    }
+
+    .nav-links a {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent);
+      transition: width 0.2s ease;
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-main);
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1.5rem 1.5rem 4rem;
+    }
+
+    section {
+      padding: 3.5rem 0;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.8);
+    }
+
+    section:last-of-type {
+      border-bottom: none;
+    }
+
+    .section-label {
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 0.5rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .section-subtext {
+      color: var(--text-muted);
+      max-width: 650px;
+      font-size: 0.95rem;
+    }
+
+    /* Hero */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.5fr);
+      gap: 2.5rem;
+      align-items: center;
+      padding-top: 2.5rem;
+    }
+
+    .hero-kicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.3rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-tagline {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-meta span {
+      padding: 0.25rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 1.8rem;
+    }
+
+    .btn-primary,
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease, border-color 0.15s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at top left, #38bdf8, #0ea5e9 40%, #0369a1 100%);
+      box-shadow: 0 10px 30px rgba(56, 189, 248, 0.35);
+      color: #0b1120;
+      font-weight: 600;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 14px 40px rgba(56, 189, 248, 0.45);
+    }
+
+    .btn-ghost {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--text-main);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--accent);
+      background: rgba(15, 23, 42, 1);
+      transform: translateY(-1px);
+    }
+
+    .hero-note {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .hero-note span {
+      color: var(--accent);
+    }
+
+    .hero-panel {
+      border-radius: 1.25rem;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.18), rgba(15, 23, 42, 1) 55%, #020617 100%);
+      padding: 1.2rem 1.2rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .hero-dots {
+      display: flex;
+      gap: 0.3rem;
+    }
+
+    .hero-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+    }
+
+    .hero-terminal {
+      font-family: "SF Mono", ui-monospace, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.78rem;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 0.9rem;
+      padding: 0.9rem;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+    }
+
+    .terminal-line {
+      margin-bottom: 0.3rem;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .terminal-prompt {
+      color: #38bdf8;
+    }
+
+    .terminal-tag {
+      color: #a5b4fc;
+    }
+
+    .terminal-ip {
+      color: #f97316;
+    }
+
+    .terminal-ok {
+      color: #22c55e;
+    }
+
+    .hero-badge {
+      position: absolute;
+      right: 1rem;
+      bottom: 1rem;
+      font-size: 0.75rem;
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      color: var(--text-muted);
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 8px rgba(34, 197, 94, 0.9);
+    }
+
+    /* Grid / cards */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.8rem;
+    }
+
+    .card {
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.98));
+      border-radius: 1rem;
+      border: 1px solid rgba(30, 64, 175, 0.7);
+      padding: 1.1rem 1.2rem;
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .card-soft {
+      border: 1px solid rgba(30, 64, 175, 0.5);
+      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.1), rgba(15, 23, 42, 0.98));
+    }
+
+    .card-title {
+      font-size: 0.98rem;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.5rem;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      padding: 0.22rem 0.55rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--text-muted);
+    }
+
+    ul {
+      list-style: none;
+      margin-top: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    ul li {
+      margin-bottom: 0.25rem;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.95);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+    }
+
+    .pill-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .muted {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    .subheading {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-top: 0.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .resume-link {
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      text-decoration-color: rgba(148, 163, 184, 0.8);
+      text-underline-offset: 4px;
+    }
+
+    .contact-links {
+      margin-top: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-links a {
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.95);
+      color: var(--text-muted);
+    }
+
+    .contact-links a:hover {
+      border-color: var(--accent);
+      color: var(--text-main);
+    }
+
+    footer {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem 2rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      border-top: 1px solid rgba(15, 23, 42, 0.9);
+    }
+
+    @media (max-width: 800px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-panel {
+        order: -1;
+      }
+
+      .nav {
+        padding-inline: 1rem;
+      }
+
+      main {
+        padding-inline: 1rem;
+      }
+
+      .grid-2 {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-links {
+        display: none;
+      }
+
+      section {
+        padding: 2.8rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="nav">
+      <div class="nav-left">
+        <div class="nav-logo">SC</div>
+        <div>
+          <div class="nav-title">The Cyber Defender</div>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#playbook">SOC Playbook</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home">
+      <div class="hero">
+        <div>
+          <div class="hero-kicker">Entry-Level Cybersecurity Specialist · SOC Analyst</div>
+          <h1 class="hero-title">Defending systems, one log at a time.</h1>
+          <p class="hero-tagline">
+            I’m Sierra “Sisi” Cameron – an emerging Cyber Defender focused on threat detection, incident response,
+            and turning noisy alerts into clear security decisions.
+          </p>
+
+          <div class="hero-meta">
+            <span>Threat Detection &amp; Analysis</span>
+            <span>SIEM · Splunk</span>
+            <span>Incident Response</span>
+          </div>
+
+          <div class="hero-actions">
+            <!-- TODO: update href with #projects or a real resume link -->
+            <a href="#projects" class="btn-primary">View My Projects</a>
+            <a href="#contact" class="btn-ghost">Download Resume</a>
+          </div>
+
+          <p class="hero-note">
+            Currently seeking opportunities as a <span>Cybersecurity Analyst</span>, <span>SOC Analyst</span>, or
+            <span>Security Operations Specialist</span>.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="Live security snapshot mockup">
+          <div class="hero-panel-header">
+            <span>~/blue-team/active-investigation</span>
+            <div class="hero-dots">
+              <span class="hero-dot"></span>
+              <span class="hero-dot"></span>
+              <span class="hero-dot"></span>
+            </div>
+          </div>
+
+          <div class="hero-terminal">
+            <div class="terminal-line">
+              <span class="terminal-prompt">sisi@defender</span>:<span class="terminal-tag">~</span>$ tail -f auth.log
+            </div>
+            <div class="terminal-line">
+              [INFO] Failed login attempts: <span class="terminal-ip">192.168.10.42</span> → svc-admin (18x)
+            </div>
+            <div class="terminal-line">
+              [INFO] Correlation search triggered: brute_force_authentication
+            </div>
+            <div class="terminal-line">
+              [ACTION] Account temporarily locked &amp; IP flagged for review
+            </div>
+            <div class="terminal-line">
+              <span class="terminal-ok">[OK]</span> SIEM dashboard updated · incident ticket opened
+            </div>
+          </div>
+
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Monitoring: Auth logs · Endpoint · Network
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">About</div>
+      <h2 class="section-title">Sierra “Sisi” Cameron · The Cyber Defender</h2>
+      <p class="section-subtext">
+        I’m an entry-level Cybersecurity Specialist and SOC Analyst with a growing focus on blue team work:
+        monitoring SIEM alerts, analyzing logs, and supporting incident response. My background blends
+        customer-focused experience with hands-on security training, which means I can communicate clearly,
+        stay calm under pressure, and think like both the user and the attacker.
+      </p>
+      <p class="section-subtext" style="margin-top: 0.8rem;">
+        Recently, I’ve been building a home lab to sharpen SIEM searches, practice incident handling, and walk
+        through real-world style investigations—from first alert to final recommendation.
+      </p>
+
+      <div class="grid-2" style="margin-top: 1.8rem;">
+        <div class="card card-soft">
+          <div class="card-title">What I’m focused on right now</div>
+          <ul>
+            <li>Strengthening blue team skills: SIEM, log analysis, alert triage</li>
+            <li>Practicing incident response workflows from detection → containment → recovery</li>
+            <li>Diving deeper into cloud security and identity &amp; access management</li>
+            <li>Documenting security findings in a clear, non-intimidating way</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">How I work</div>
+          <ul>
+            <li>Curious by default – I like to ask <em>why</em> an alert happened, not just close it.</li>
+            <li>Comfortable working from logs, dashboards, and tickets to build a full picture.</li>
+            <li>Team-oriented and coachable – I’m eager to learn from senior analysts and engineers.</li>
+            <li>Big on documentation – I like leaving a clear trail for the next analyst.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="section-label">Skills</div>
+      <h2 class="section-title">Skills &amp; Tools</h2>
+      <p class="section-subtext">
+        A snapshot of the tools and concepts I’ve been using in training, labs, and personal projects.
+      </p>
+
+      <div class="grid-2">
+        <div class="card card-soft">
+          <div class="card-title">Core Security Skills</div>
+          <ul>
+            <li>Threat detection &amp; analysis</li>
+            <li>SIEM monitoring &amp; alert triage</li>
+            <li>Incident response &amp; security reporting</li>
+            <li>Log analysis (authentication, network, endpoint)</li>
+            <li>Vulnerability identification &amp; remediation support</li>
+            <li>Using frameworks like MITRE ATT&amp;CK to guide investigations</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Tools &amp; Technologies</div>
+          <ul>
+            <li><strong>SIEM:</strong> Splunk (searches, dashboards, alerts)</li>
+            <li><strong>OS &amp; Systems:</strong> Linux, Windows</li>
+            <li><strong>Networking &amp; Analysis:</strong> (Wireshark / tcpdump – add as you use them)</li>
+            <li><strong>Security &amp; Vulnerability:</strong> OSS tools, OSINT tooling, basic scanning</li>
+            <li><strong>Scripting / Automation:</strong> Bash, Python basics (if applicable)</li>
+            <li><strong>Collaboration:</strong> Ticketing &amp; documentation platforms</li>
+          </ul>
+          <div class="pill">
+            <span class="pill-dot"></span>
+            Always learning · Always leveling up
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CERTIFICATIONS -->
+    <section id="certs">
+      <div class="section-label">Certifications</div>
+      <h2 class="section-title">Certifications</h2>
+      <p class="section-subtext">
+        Formal training that backs up my hands-on learning and lab work.
+      </p>
+
+      <div class="grid-2">
+        <div class="card card-soft">
+          <div class="card-title">CompTIA CySA+</div>
+          <p class="muted">
+            Cybersecurity Analyst – focuses on behavior analytics, threat detection, and incident response in
+            modern environments.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Splunk Core Certified User</div>
+          <p class="muted">
+            Comfortable building searches, dashboards, and alerts to make sense of large volumes of security
+            data.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Linux Essentials</div>
+          <p class="muted">
+            Familiar with the Linux command line, file permissions, and system basics—essential for log
+            analysis and system hardening.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">More to come</div>
+          <p class="muted">
+            Continuing to grow my skills and certifications, with an ongoing focus on blue team, SOC, and
+            cloud security.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label">Projects</div>
+      <h2 class="section-title">Projects &amp; Home Lab</h2>
+      <p class="section-subtext">
+        A selection of hands-on work that shows how I approach detection, investigation, and documentation.
+        (Screenshots and GitHub links can be added as these projects evolve.)
+      </p>
+
+      <div class="grid-2">
+        <div class="card card-soft">
+          <div class="card-title">Blue Team SIEM Lab – Brute Force Detection</div>
+          <p class="muted">
+            Built a home lab using Splunk to monitor authentication logs and detect suspicious login behavior.
+          </p>
+          <ul>
+            <li>Ingested Windows/Linux authentication logs into Splunk</li>
+            <li>Created correlation searches for multiple failed logins and unusual login times</li>
+            <li>Built dashboards for failed vs. successful logins by user, source, and time</li>
+            <li>Documented alert triage steps and escalation criteria</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Splunk</span>
+            <span class="chip">Blue Team</span>
+            <span class="chip">Brute-force detection</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Incident Response Walkthrough – Suspicious PowerShell</div>
+          <p class="muted">
+            Simulated a security incident involving suspicious PowerShell activity on a host, then walked
+            through the full investigation.
+          </p>
+          <ul>
+            <li>Identified potentially malicious commands in Windows event logs</li>
+            <li>Mapped activity to MITRE ATT&amp;CK techniques</li>
+            <li>Outlined containment steps (host isolation, IP blocking, credential resets)</li>
+            <li>Wrote an incident report with timeline, root cause, and lessons learned</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Incident response</span>
+            <span class="chip">Windows logs</span>
+            <span class="chip">MITRE ATT&amp;CK</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Linux Hardening &amp; Access Control</div>
+          <p class="muted">
+            Secured a Linux virtual machine to reduce the risk of unauthorized access.
+          </p>
+          <ul>
+            <li>Configured SSH for key-based authentication and disabled root login</li>
+            <li>Applied least-privilege file permissions</li>
+            <li>Enabled and configured a firewall (ufw/iptables)</li>
+            <li>Documented baseline vs. hardened configuration</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Linux</span>
+            <span class="chip">Hardening</span>
+            <span class="chip">Access control</span>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Security Documentation &amp; Reporting</div>
+          <p class="muted">
+            Created clear, non-intimidating writeups for lab incidents and findings aimed at both technical and
+            non-technical audiences.
+          </p>
+          <ul>
+            <li>Summarized complex findings into plain-language impact statements</li>
+            <li>Outlined recommended next steps and longer-term improvements</li>
+            <li>Structured reports by timeline, evidence, and business impact</li>
+          </ul>
+          <div class="chip-row">
+            <span class="chip">Reporting</span>
+            <span class="chip">Communication</span>
+            <span class="chip">Stakeholder-friendly</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOC PLAYBOOK -->
+    <section id="playbook">
+      <div class="section-label">SOC Playbook</div>
+      <h2 class="section-title">SOC Analyst Playbook</h2>
+      <p class="section-subtext">
+        A glimpse into how I think through common security scenarios—from first alert to final action.
+      </p>
+
+      <div class="grid-2">
+        <div class="card card-soft">
+          <div class="card-title">Case Study: Multiple Failed Logins from One IP</div>
+          <p class="muted">
+            <strong>Scenario:</strong> SIEM raises an alert for repeated failed logins targeting a privileged
+            account.
+          </p>
+          <ul>
+            <li><strong>Confirm:</strong> Validate the volume and timeframe of failed logins.</li>
+            <li><strong>Context:</strong> Check geolocation, previous activity, and known devices.</li>
+            <li><strong>Success?</strong> Look for any successful logins tied to the same IP or username.</li>
+            <li><strong>Respond:</strong> Recommend temporary account lockout and IP blocking, then notify the
+              user.</li>
+            <li><strong>Document:</strong> Record timeline, investigation steps, and outcome.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Case Study: Suspicious PowerShell Execution</div>
+          <p class="muted">
+            <strong>Scenario:</strong> Endpoint logs show unusual PowerShell usage on a user workstation.
+          </p>
+          <ul>
+            <li>Review the exact command line and script content (if available).</li>
+            <li>Check parent processes, user context, and execution history.</li>
+            <li>Correlate with any network connections or file changes at that time.</li>
+            <li>Recommend isolating the host if behavior appears malicious.</li>
+            <li>Log findings and suggest additional hunting across similar endpoints.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="section-label">Experience</div>
+      <h2 class="section-title">Experience &amp; Training</h2>
+      <p class="section-subtext">
+        A mix of cybersecurity training and professional experience that supports my work as a future SOC
+        analyst.
+      </p>
+
+      <div class="grid-2">
+        <div class="card card-soft">
+          <div class="card-title">Cybersecurity Training</div>
+          <p class="subheading">Cybersecurity Analyst / SOC Training – [Program / School Name]</p>
+          <p class="muted">
+            Completed hands-on training focused on threat detection, SIEM usage, and incident response.
+          </p>
+          <ul>
+            <li>Worked through real-world style labs and blue team scenarios</li>
+            <li>Monitored and investigated simulated alerts in a lab SIEM environment</li>
+            <li>Practiced documenting incidents from detection through resolution</li>
+            <li>Collaborated with peers on group investigations and security reporting</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Professional Experience</div>
+          <p class="muted">
+            While my previous roles were not strictly “cyber,” they built the foundation for working in a SOC:
+          </p>
+          <ul>
+            <li>Communicating clearly with users and internal teams under time pressure</li>
+            <li>Documenting issues and resolutions in ticketing systems</li>
+            <li>Identifying patterns in problems and escalating unusual or high-impact cases</li>
+            <li>Staying calm, organized, and focused when handling multiple tasks at once</li>
+          </ul>
+          <p class="muted" style="margin-top: 0.4rem;">
+            Full resume with job history available upon request and via the download link below.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let’s Connect</h2>
+      <p class="section-subtext">
+        I’m actively seeking entry-level roles as a <strong>Cybersecurity Analyst</strong>,
+        <strong>SOC Analyst</strong>, or <strong>Security Operations Specialist</strong>.
+        If you’re looking for someone who’s coachable, curious, and already hands-on with tools and workflows
+        like these, I’d love to talk.
+      </p>
+
+      <p class="muted" style="margin-top: 0.85rem;">
+        You can download my full resume or reach out directly using the links below:
+      </p>
+
+      <div class="contact-links">
+        <!-- TODO: Update these with your real links -->
+        <a href="mailto:youremail@example.com">Email Me</a>
+        <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a href="#" class="resume-link">Download Resume (PDF)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Sierra “Sisi” Cameron · The Cyber Defender. Built with GitHub Pages.
+    <br />
+    This site is a living portfolio—projects, screenshots, and case studies will be updated as I grow.
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
